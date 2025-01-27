@@ -1,0 +1,16 @@
+.main-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  background-color: #091422;
+}
+
+.left-section {
+  width: 49%; /* Adjust based on preference */
+}
+
+.right-section {
+  width: 49%; /* Adjust based on preference */
+  border: 1px solid #ccc; /* Optional, just for visibility */
+  height: 100%;
+}

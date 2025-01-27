@@ -1,0 +1,33 @@
+/* Styling for the inputs container */
+.inputs-container {
+  padding: 20px;
+  border: 2px solid #29333F;
+  background-color: #0F1927;
+  text-align: center;
+}
+
+/* Optional: Style for the <p> element inside inputs-container */
+.inputs-container p {
+  font-size: 18px;
+  color: #fff;
+  margin: 0; /* Remove any default margin from the <p> tag */
+}
+
+.input-field-container {
+  margin-bottom: 15px;  // Add space between input fields
+}
+
+.form-field {
+  width: 100%;
+  max-width: 400px;  // Limit the width of the form field
+}
+
+button {
+  margin-top: 20px;
+}
+
+.mat-form-field {
+  width: 100%;
+  max-width: 400px;  // Set a max width for better readability
+  margin-bottom: 15px;  // Space between input fields
+}

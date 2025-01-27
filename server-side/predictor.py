@@ -13,7 +13,7 @@ required_features = [
 ]
 
 # Load the saved model
-with open("server-side/random_forest_model.pkl", "rb") as f:
+with open("random_forest_model.pkl", "rb") as f:
     model = pickle.load(f)
 
 def predict_esg_score(user_input):

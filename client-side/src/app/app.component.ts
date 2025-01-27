@@ -1,12 +1,14 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { MatInputModule } from '@angular/material/input';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { FormsModule } from '@angular/forms';
+import { EsgScoreCalculatorComponent } from './esg-score-calculator/esg-score-calculator.component';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  standalone: true,
+  imports: [MatInputModule, MatFormFieldModule, FormsModule, EsgScoreCalculatorComponent],  // Add EsgScoreCalculatorComponent to imports
   templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+  styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
-  title = 'client-side';
-}
+export class AppComponent {}

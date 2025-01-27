@@ -1,10 +1,12 @@
 from flask import Flask, request, jsonify
 import mysql.connector
 from predictor import predict_esg_score, required_features
+from flask_cors import CORS
 
 app = Flask(__name__)
+CORS(app)
 
-# Configure MySQL connection
+# # Configure MySQL connection
 db_config = {
     'host': 'localhost',       # Update with your MySQL host
     'user': 'root',   # Update with your MySQL username
@@ -12,7 +14,7 @@ db_config = {
     'database': 'ionization'   # Update with your MySQL database name
 }
 
-# Function to connect to the database
+# # Function to connect to the database
 def get_db_connection():
     connection = mysql.connector.connect(**db_config)
     return connection
