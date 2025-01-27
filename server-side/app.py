@@ -17,6 +17,49 @@ def get_db_connection():
     connection = mysql.connector.connect(**db_config)
     return connection
 
+@app.route('/delete', methods=['POST'])
+def delete_row():
+    """API endpoint to delete a row from the searchdata table based on search_id provided in JSON input."""
+    try:
+        # Get the input data from the POST request
+        data = request.get_json()
+
+        # Validate if search_id is provided in the JSON
+        if 'search_id' not in data:
+            return jsonify({'error': 'search_id is required in the input data'}), 400
+
+        search_id = data['search_id']
+
+        # Connect to the database
+        connection = get_db_connection()
+        cursor = connection.cursor()
+
+        # Check if the row exists
+        check_query = "SELECT * FROM searchdata WHERE search_id = %s"
+        cursor.execute(check_query, (search_id,))
+        row = cursor.fetchone()
+
+        if not row:
+            return jsonify({'error': f'No record found with search_id {search_id}'}), 404
+
+        # Delete the row
+        delete_query = "DELETE FROM searchdata WHERE search_id = %s"
+        cursor.execute(delete_query, (search_id,))
+        connection.commit()
+
+        # Close the connection
+        cursor.close()
+        connection.close()
+
+        return jsonify({'message': f'Record with search_id {search_id} deleted successfully.'})
+
+    except mysql.connector.Error as db_error:
+        return jsonify({'error': f"Database error: {str(db_error)}"}), 500
+
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500
+
+
 @app.route('/predict', methods=['POST'])
 def predict():
     """API endpoint for predicting the ESG score."""
