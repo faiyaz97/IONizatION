@@ -6,7 +6,7 @@ from flask_cors import CORS
 app = Flask(__name__)
 CORS(app)
 
-# Configure MySQL connection
+# # Configure MySQL connection
 db_config = {
     'host': 'localhost',       # Update with your MySQL host
     'user': 'root',   # Update with your MySQL username
@@ -14,12 +14,8 @@ db_config = {
     'database': 'ionization'   # Update with your MySQL database name
 }
 
-<<<<<<< Updated upstream
 
 # # Function to connect to the database
-=======
-# Function to connect to the database
->>>>>>> Stashed changes
 def get_db_connection():
     connection = mysql.connector.connect(**db_config)
     return connection
@@ -32,7 +28,7 @@ def get_by_issuerid():
     try:
         # Get the issuerid from query parameters
         issuerid = request.args.get('issuerid')  # Get issuerid from the query string
-        
+
         if not issuerid:
             return jsonify({'error': 'issuerid is required'}), 400
 
@@ -60,7 +56,7 @@ def get_by_issuerid():
         # Ensure the record is JSON serializable
         # You may want to explicitly handle any nested structures here
         try:
-            
+
             return jsonify(record)
         except TypeError as e:
             return jsonify({'error': f"Unable to serialize record: {str(e)}"}), 500
@@ -140,7 +136,7 @@ def predict_route():
         try:
             connection = get_db_connection()
             cursor = connection.cursor()
-            
+
             # Execute the insert query
             user_input.append(esg_score)
             # Define the table structure

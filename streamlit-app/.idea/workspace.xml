@@ -5,9 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="243a3c3a-7583-4f9a-b753-bd7e68a7600d" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client-side/src/app/esg-score-calculator/esg-score-calculator.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../client-side/src/app/esg-score-calculator/esg-score-calculator.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client-side/src/app/esg-score-calculator/esg-score-calculator.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/../client-side/src/app/esg-score-calculator/esg-score-calculator.component.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../server-side/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/../server-side/app.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -59,7 +56,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1737999581595</updated>
-      <workItem from="1737999582774" duration="8215000" />
+      <workItem from="1737999582774" duration="8519000" />
     </task>
     <servers />
   </component>
