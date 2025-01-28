@@ -4,30 +4,63 @@
   border: 2px solid #29333F;
   background-color: #0F1927;
   text-align: center;
+  max-width: 1200px;  // Max width for larger screens
+  margin: auto;  // Center the form on the page
+  color: white;
 }
 
-/* Optional: Style for the <p> element inside inputs-container */
-.inputs-container p {
-  font-size: 18px;
-  color: #fff;
-  margin: 0; /* Remove any default margin from the <p> tag */
-}
-
-.input-field-container {
-  margin-bottom: 15px;  // Add space between input fields
-}
-
-.form-field {
+/* Styling for rows of input fields */
+.input-row {
+  display: grid; /* Use CSS Grid for dynamic layout */
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); /* Adjusted for smaller input fields */
+  gap: 5px; /* Space between input fields */
+  justify-content: center;  /* Ensure the fields are centered */
   width: 100%;
-  max-width: 400px;  // Limit the width of the form field
+  padding: 0;
 }
 
+/* Styling for form fields */
+
+.mdc-text-field {
+  padding: 0 !important;  // Removes padding on the outermost wrapper
+}
+
+.mdc-text-field .mdc-text-field__input {
+  padding: 0 !important;  // Removes padding inside the input field itself
+}
+
+/* Optional: Styling for the button */
 button {
-  margin-top: 20px;
+  width: 100%;  // Make the button take full width
+  max-width: 200px;  // Limit button width
+  height: calc(100% - 20px); ;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-.mat-form-field {
-  width: 100%;
-  max-width: 400px;  // Set a max width for better readability
-  margin-bottom: 15px;  // Space between input fields
+/* Style for the button container */
+.button-container {
+  text-align: center;
+  width: 100%;  // Ensure the button takes full width on smaller screens
+  display: flex;
+  justify-content: center;  // Center the button horizontally
+}
+
+/* Media Queries for responsiveness */
+@media (max-width: 900px) {
+  /* This is where we can adjust behavior for smaller screens if necessary */
+  .inputs-container .mat-form-field {
+    min-width: 150px;  /* Slightly smaller input fields for smaller screens */
+  }
+}
+
+@media (max-width: 600px) {
+  /* Stack everything in a single column layout */
+  .inputs-container .mat-form-field {
+    min-width: 100%;  /* Ensure inputs take full width on mobile */
+  }
+
+  .button-container {
+    width: 100%;  // Ensure the button takes full width on smaller screens
+  }
 }

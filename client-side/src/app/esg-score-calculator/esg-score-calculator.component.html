@@ -1,47 +1,51 @@
 <div class="inputs-container">
   <form (ngSubmit)="onSubmit()">
-    <mat-form-field appearance="fill">
-      <mat-label>Controversial Source Score</mat-label>
-      <input matInput type="number" [(ngModel)]="inputFields[0]" name="controv_src_score" step="any" />
-    </mat-form-field>
+    <!-- First Row: 4 Input Fields -->
+    <div class="input-row">
+      <mat-form-field appearance="fill" class="custom-width">
+        <mat-label>Controversial Source Score</mat-label>
+        <input matInput type="number" [(ngModel)]="inputFields[0]" name="controv_src_score" step="any" />
+      </mat-form-field>
 
-    <mat-form-field appearance="fill">
-      <mat-label>Environmental Pillar Score</mat-label>
-      <input matInput type="number" [(ngModel)]="inputFields[1]" name="environmental_pillar_score" step="any" />
-    </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Environmental Pillar Score</mat-label>
+        <input matInput type="number" [(ngModel)]="inputFields[1]" name="environmental_pillar_score" step="any" />
+      </mat-form-field>
 
-    <mat-form-field appearance="fill">
-      <mat-label>Governance Pillar Score</mat-label>
-      <input matInput type="number" [(ngModel)]="inputFields[2]" name="governance_pillar_score" step="any" />
-    </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Governance Pillar Score</mat-label>
+        <input matInput type="number" [(ngModel)]="inputFields[2]" name="governance_pillar_score" step="any" />
+      </mat-form-field>
 
-    <mat-form-field appearance="fill">
-      <mat-label>Social Pillar Score</mat-label>
-      <input matInput type="number" [(ngModel)]="inputFields[3]" name="social_pillar_score" step="any" />
-    </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Social Pillar Score</mat-label>
+        <input matInput type="number" [(ngModel)]="inputFields[3]" name="social_pillar_score" step="any" />
+      </mat-form-field>
 
-    <mat-form-field appearance="fill">
-      <mat-label>Climate Change Theme Score</mat-label>
-      <input matInput type="number" [(ngModel)]="inputFields[4]" name="climate_change_theme_score" step="any" />
-    </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Climate Change Theme Score</mat-label>
+        <input matInput type="number" [(ngModel)]="inputFields[4]" name="climate_change_theme_score" step="any" />
+      </mat-form-field>
 
-    <mat-form-field appearance="fill">
-      <mat-label>Industry Adjusted Score</mat-label>
-      <input matInput type="number" [(ngModel)]="inputFields[5]" name="industry_adjusted_score" step="any" />
-    </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Industry Adjusted Score</mat-label>
+        <input matInput type="number" [(ngModel)]="inputFields[5]" name="industry_adjusted_score" step="any" />
+      </mat-form-field>
 
-    <mat-form-field appearance="fill">
-      <mat-label>Business Ethics Theme Score</mat-label>
-      <input matInput type="number" [(ngModel)]="inputFields[6]" name="business_ethics_theme_score" step="any" />
-    </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Business Ethics Theme Score</mat-label>
+        <input matInput type="number" [(ngModel)]="inputFields[6]" name="business_ethics_theme_score" step="any" />
+      </mat-form-field>
 
-    <button mat-raised-button color="primary" type="submit">Submit</button>
+      <!-- Add Button -->
+      <div class="button-container">
+        <button mat-raised-button color="primary" type="submit">Submit</button>
+      </div>
+    </div>
   </form>
 
   <!-- Display the ESG score directly -->
-
   <div>
     <p>Calculated ESG Score: {{ (esgScore$ | async) || 0 }}</p>
   </div>
-
 </div>

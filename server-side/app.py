@@ -6,7 +6,7 @@ from flask_cors import CORS
 app = Flask(__name__)
 CORS(app)
 
-# # Configure MySQL connection
+# Configure MySQL connection
 db_config = {
     'host': 'localhost',       # Update with your MySQL host
     'user': 'root',   # Update with your MySQL username
@@ -14,8 +14,12 @@ db_config = {
     'database': 'ionization'   # Update with your MySQL database name
 }
 
+<<<<<<< Updated upstream
 
 # # Function to connect to the database
+=======
+# Function to connect to the database
+>>>>>>> Stashed changes
 def get_db_connection():
     connection = mysql.connector.connect(**db_config)
     return connection
